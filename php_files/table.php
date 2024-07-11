@@ -16,10 +16,8 @@
         $password_db = "";
         $db_name = "task2";
 
-        // Create connection
         $conn = new mysqli($servername, $username_db, $password_db, $db_name);
 
-        // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
@@ -28,7 +26,7 @@
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
-            // output data of each row
+            
             while($row = $result->fetch_assoc()) {
                 echo "<tr><td>" . $row["username"]. "</td><td>" . $row["password"]. "</td></tr>";
             }
