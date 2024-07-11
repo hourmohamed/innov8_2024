@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>task 1</title>
+        <style>
+            .calculator{
+                color:purple;
+                font-size:40px;
+                /* background-color: pink; */
+                text-align: center;
+            }
+            body{
+                background-color: linen;
+                text-align: center;
+            }
+
+        </style>
+        
+    </head>
+    <h1>calculator</h1>
+    <body>
+        <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+       <button onclick="appendNumber('1')"">1</button>
+       <button onclick="appendNumber('2')">2</button>
+       <button onclick="appendNumber('3')">3</button>
+       <button onclick="appendNumber('4')">4</button>
+       <button onclick="appendNumber('5')">5</button>
+       <button onclick="appendNumber('6')">6</button>
+       <button onclick="appendNumber('7')">7</button>
+       <button onclick="appendNumber('8')">8</button>
+       <button onclick="appendNumber('9')">9</button>
+       <button onclick="appendNumber('0')">0</button>
+       <button  onclick="add()">add</button>
+       <button onclick="clearDisplay()">clr</button>
+       <button onclick="setOperator('+')">+</button>
+        </div>
+        </div>
+        
+
+       <script>
+        var operand1='';
+        var operand2='';
+        var operator = null;
+        // var displayValue=''
+        // var result=null;
+
+        function setOperator(op)
+        { if (operand1 === '') {
+                operand1 = document.getElementById('display').value;
+            } else {
+                operand2 = document.getElementById('display').value;
+            }
+            operator = op;
+            document.getElementById('display').value = '';
+            
+                
+        }
+
+
+        function add()
+        {
+            if (operand1 === '' || operator === null) {
+                return;
+            }
+            operand2 = document.getElementById('display').value;
+            let result = 0;
+            if (operator === '+') {
+                result = parseFloat(operand1) + parseFloat(operand2);
+            }
+            document.getElementById('display').value = result;
+            operand1 = result.toString();
+            operand2 = '';
+            operator = null;
+    }
+
+        function clearDisplay() {
+            operand1 = '';
+            operand2 = '';
+            operator = null;
+            document.getElementById('display').value = '';
+        }
+
+
+        function appendNumber(number) {
+            var display = document.getElementById('display');
+            display.value += number;
+        }
+       </script>
+    </body>
+   
+</html>
