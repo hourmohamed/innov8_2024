@@ -3,7 +3,6 @@ include_once 'Database.php';
 include_once 'User.php';
 include_once 'session.php';
 
-// Initialize database and user objects
 $database = new Database();
 $db = $database->getConnection();
 $user = new User($db);
