@@ -4,9 +4,9 @@ SELECT employee.Fname, employee.Lname, employee.Dno FROM employee;
 
 SELECT project.Pname, project.Plocation, project.Dnum FROM project;
 
-SELECT employee.Fname, employee.Lname, employee.Salary*0.1 AS "ANNUAL COMM" FROM employee;
+SELECT employee.Fname, employee.Lname, employee.salary*0.1 AS "ANNUAL COMM" FROM employee;
 
-SELECT employee.SSN, employee.Fname, employee.Lname, employee.Salary FROM employee WHERE employee.Salary>1000;
+SELECT employee.SSN, employee.Fname, employee.Lname, employee.salary FROM employee WHERE employee.salary>1000; 
 
 SELECT employee.SSN, employee.Fname, employee.Lname FROM employee WHERE employee.salary*12>10000;
 
@@ -27,7 +27,7 @@ SELECT project.Pname, project.Pnumber, project.Plocation, project.City FROM proj
 
 SELECT project.Pname, project.Pnumber, project.Plocation, project.City, project.Dnum FROM project WHERE project.Pname LIKE 'A%';
 
-SELECT employee.Fname, employee.Lname, employee.SSN FROM employee JOIN department WHERE department.DNumber=30 AND employee.Salary>=1000 AND employee.Salary<=2000;
+SELECT employee.Fname, employee.Lname, employee.SSN FROM employee JOIN department WHERE department.DNumber=30 AND employee.salary>=1000 AND employee.salary<=2000;
 
 SELECT employee.Fname, employee.Lname FROM employee JOIN department ON department.DNumber=employee.Dno JOIN works_for ON employee.SSN=works_for.ESSN JOIN project ON works_for.Pno=project.Pnumber WHERE department.DNumber=10 AND project.Pname='Al Rabwah' AND works_for.Hours=10;
 
@@ -73,4 +73,4 @@ UPDATE employee SET Superssn = '102672' WHERE Superssn = '223344';
 DELETE FROM works_for WHERE ESSN = '223344';
 DELETE FROM employee WHERE SSN = '223344';
 
-UPDATE Employee SET Salary = Salary * 1.20 WHERE SSN = '102672';
+UPDATE Employee SET salary = salary * 1.20 WHERE SSN = '102672';
