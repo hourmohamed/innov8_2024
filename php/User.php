@@ -13,6 +13,8 @@ class User {
     }
 
     public function create() {
+        $database = new Database(); ######
+        $db = $database->getConnection(); ######
         $query = "INSERT INTO " . $this->table_name . " SET username=:username, email=:email, password=:password";
 
         $stmt = $this->conn->prepare($query);

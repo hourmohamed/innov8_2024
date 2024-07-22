@@ -1,0 +1,20 @@
+.profile-container {
+    text-align: center;
+    margin-top: 50px;
+}
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    object-fit: cover;
+}
+.upload-btn {
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color:linen;
+    color:black;
+    border: none;
+    border-radius: 5px;
+}
